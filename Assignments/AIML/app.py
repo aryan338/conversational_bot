@@ -11,7 +11,7 @@ else:
 
 while True:
     message = input("Human: ")    
-    if message == "quit":
+    if message == "quit" or "exit":
         exit()
     elif message == "save":
         kernel.saveBrain("bot_brain.brn")

@@ -1,16 +1,33 @@
 <aiml version="1.0.1" encoding="UTF-8">
 
 	<category>
-		<pattern>* HI *</pattern>
+		<pattern>HELLO</pattern>
 		<template>
-			Hello Human!!
+			<random>
+				<li>Hello Human!!</li>
+				<li>Welcome Human</li>
+			</random>
+			May I know your name?
 		</template>
 	</category>
-
 	<category>
-		<pattern>WHO ARE YOU?</pattern>
+		<pattern> * </pattern>
 		<template>
-			Just another bot :-(
+			<think><set name= "username"> <star/></set></think>
+			Hi <get name = "username"/>
+			How can I help you?
+		</template>
+	</category>
+	<category>
+		<pattern>WHAT CAN YOU DO?</pattern>
+		<template>
+			I am ALICE, your assistant to help you place an order
+		</template>
+	</category>
+	<category>
+		<pattern>INITIATE</pattern>
+		<template>
+		Please enter the product code in the form of XY-000
 		</template>
 	</category>
 
