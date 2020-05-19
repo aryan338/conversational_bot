@@ -1,7 +1,7 @@
 <aiml version="1.0.1" encoding="UTF-8">
 
 	<category>
-		<pattern>HELLO</pattern>
+		<pattern>*</pattern>
 		<template>
 			<random>
 				<li>Hello Human!!</li>
@@ -15,19 +15,95 @@
 		<template>
 			<think><set name= "username"> <star/></set></think>
 			Hi <get name = "username"/>
-			How can I help you?
+			How can I help you?(Initiate, track or exit)
 		</template>
 	</category>
 	<category>
 		<pattern>WHAT CAN YOU DO?</pattern>
 		<template>
-			I am ALICE, your assistant to help you place an order
+			I am ALICE, your assistant to help you place an order at Blooms
 		</template>
 	</category>
 	<category>
 		<pattern>INITIATE</pattern>
 		<template>
 		Please enter the product code in the form of XY-000
+		</template>
+	</category>
+	<category>
+		<pattern>*<pattern>
+		<template>Confirm?(Confirm/Cancel)</template>
+	</category>
+	<category>
+		<pattern>CONFIRM<pattern>
+		<template>Do you want to add any more product?(yes/no)</template>
+	</category>
+	<category>
+		<pattern>CANCEL<pattern>
+		<template>
+		<srai>CONFIRM</srai>
+	</template>
+	</category>
+	<category>
+		<pattern>YES<pattern>
+		<template>
+		<srai>INITIATE</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>NO<pattern>
+		<template>Do you want to buy cart?(yes/no)</template>
+	</category>
+	<category>
+		<pattern>NO<pattern>
+		<template>
+		<srai>CONFIRM</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>YES<pattern>
+		<template>Your order number is
+			<random>
+				<li>123</li>
+				<li>435</li>
+				<li>635</li>
+				<li>893</li>
+				<li>354</li>
+				<li>453</li>
+			</random>
+			Thank you for shopping at Blooms!!
+			<srai>EXIT</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>TRACK</pattern>
+		<template>
+			Enter your order number.
+		</template>
+	</category>
+	<category>
+	<category>
+		<pattern>*</pattern>
+		<template>
+			<random>
+				<li>Your order will reach you 1 day.</li>
+				<li>Your order will reach you 1 week.</li>
+				<li>Your order will reach you 3 days.</li>
+			</random>
+			Would you like to place new order?(yes/no)
+		</template>
+	</category>
+	<category>
+		<pattern>YES</pattern>
+		<template>
+			<srai>INITIATE</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>NO</pattern>
+		<template>
+			Thank you for shopping at Blooms!
+			<srai>EXIT</srai>
 		</template>
 	</category>
 
