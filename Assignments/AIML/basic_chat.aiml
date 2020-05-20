@@ -5,16 +5,16 @@
 		<template>
 			<random>
 				<li>Hello Human!!</li>
-				<li>Welcome Human</li>
+				<li>Welcome Human!</li>
 			</random>
-			May I know your name?
+			May I know your name?(My name is XYZ)
 		</template>
 	</category>
 	<category>
-		<pattern> * </pattern>
+		<pattern>MY NAME IS *</pattern>
 		<template>
 			<think><set name= "username"> <star/></set></think>
-			Hi <get name = "username"/>
+			Hi<get name = "username"/>
 			How can I help you?(Initiate, track or exit)
 		</template>
 	</category>
@@ -27,41 +27,41 @@
 	<category>
 		<pattern>INITIATE</pattern>
 		<template>
-		Please enter the product code in the form of XY-000
+		Please enter the product code in the form of BUY - XY001
 		</template>
 	</category>
 	<category>
-		<pattern>*<pattern>
+		<pattern>BUY *</pattern>
 		<template>Confirm?(Confirm/Cancel)</template>
 	</category>
 	<category>
-		<pattern>CONFIRM<pattern>
+		<pattern>CONFIRM</pattern>
 		<template>Do you want to add any more product?(yes/no)</template>
 	</category>
 	<category>
-		<pattern>CANCEL<pattern>
+		<pattern>CANCEL</pattern>
 		<template>
 		<srai>CONFIRM</srai>
-	</template>
+		</template>
 	</category>
 	<category>
-		<pattern>YES<pattern>
+		<pattern>YES</pattern>
 		<template>
 		<srai>INITIATE</srai>
 		</template>
 	</category>
 	<category>
-		<pattern>NO<pattern>
-		<template>Do you want to buy cart?(yes/no)</template>
+		<pattern>NO</pattern>
+		<template>Do you want to check out?(OUT/ADD)</template>
 	</category>
 	<category>
-		<pattern>NO<pattern>
+		<pattern>ADD</pattern>
 		<template>
 		<srai>CONFIRM</srai>
 		</template>
 	</category>
 	<category>
-		<pattern>YES<pattern>
+		<pattern>OUT</pattern>
 		<template>Your order number is
 			<random>
 				<li>123</li>
@@ -72,38 +72,44 @@
 				<li>453</li>
 			</random>
 			Thank you for shopping at Blooms!!
-			<srai>EXIT</srai>
+			<srai>QUIT</srai>
 		</template>
 	</category>
 	<category>
 		<pattern>TRACK</pattern>
 		<template>
-			Enter your order number.
+			Enter your order number(In the form Order 001).
 		</template>
 	</category>
+	
 	<category>
-	<category>
-		<pattern>*</pattern>
+		<pattern>Order *</pattern>
 		<template>
 			<random>
 				<li>Your order will reach you 1 day.</li>
 				<li>Your order will reach you 1 week.</li>
 				<li>Your order will reach you 3 days.</li>
 			</random>
-			Would you like to place new order?(yes/no)
+			Would you like to place new order?(exit/new)
 		</template>
 	</category>
 	<category>
-		<pattern>YES</pattern>
+		<pattern>NEW</pattern>
 		<template>
 			<srai>INITIATE</srai>
 		</template>
 	</category>
 	<category>
-		<pattern>NO</pattern>
+		<pattern>EXIT</pattern>
 		<template>
 			Thank you for shopping at Blooms!
-			<srai>EXIT</srai>
+		<srai>QUIT</srai>
+		</template>
+	</category>
+	<category>
+		<pattern>QUIT</pattern>
+		<template>
+			Press quit to exit
 		</template>
 	</category>
 
