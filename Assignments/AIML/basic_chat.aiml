@@ -83,7 +83,7 @@
 	</category>
 	
 	<category>
-		<pattern>Order *</pattern>
+		<pattern>ORDER *</pattern>
 		<template>
 			<random>
 				<li>Your order will reach you 1 day.</li>
