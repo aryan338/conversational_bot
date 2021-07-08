@@ -1,2 +1,2 @@
 # conversational_bot
-A under-construction system which can recognise voice and carry out template based conversations.
+A prototype system which ability to recognise voice inputs and carry out template based conversations.
